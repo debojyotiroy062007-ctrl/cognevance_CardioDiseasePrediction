@@ -1,124 +1,36 @@
-\# Cardiovascular Disease Prediction 🫀
-
-
-
-\## Overview
-
-This project predicts the presence of cardiovascular disease using patient health records.  
-
-It demonstrates the full machine learning workflow:
-
-\- Data preprocessing \& cleaning
-
-\- Exploratory Data Analysis (EDA)
-
-\- Correlation analysis
-
-\- Model training and comparison
-
-\- Best model selection \& evaluation
-
-\- Saving the trained model for future use
-
-
-
-\## Dataset
-
-\- \*\*Source\*\*: Provided dataset (`cardio\_train.csv`) with ~70,000 patient records.
-
-\- \*\*Target Variable\*\*: `cardio` (0 = No disease, 1 = Disease).
-
-\- \*\*Features\*\*:
-
-&nbsp; - Demographics: Age (in years), Gender, Height, Weight, BMI
-
-&nbsp; - Clinical: Systolic/Diastolic BP (`ap\_hi`, `ap\_lo`)
-
-&nbsp; - Lab: Cholesterol, Glucose
-
-&nbsp; - Lifestyle: Smoking, Alcohol intake, Physical activity
-
-
-
-\## Methodology
-
-1\. \*\*Preprocessing\*\*
-
-&nbsp;  - Converted `age` from days → years
-
-&nbsp;  - Engineered BMI from height \& weight
-
-&nbsp;  - Cleaned unrealistic values (height, weight, BP, BMI)
-
-&nbsp;  - Handled duplicate rows
-
-
-
-2\. \*\*EDA\*\*
-
-&nbsp;  - Distribution plots for numerical features
-
-&nbsp;  - Count plots for categorical features
-
-&nbsp;  - Correlation heatmap
-
-&nbsp;  - Class balance visualization
-
-
-
-3\. \*\*Model Training\*\*
-
-&nbsp;  - Logistic Regression
-
-&nbsp;  - Decision Tree
-
-&nbsp;  - K-Nearest Neighbors (KNN)
-
-&nbsp;  - Support Vector Machine (SVM)
-
-&nbsp;  - Random Forest
-
-
-
-4\. \*\*Evaluation\*\*
-
-&nbsp;  - Metrics: Accuracy, Precision, Recall, F1-score
-
-&nbsp;  - Confusion matrix
-
-&nbsp;  - Feature importance (Random Forest)
-
-
-
-5\. \*\*Best Model\*\*
-
-&nbsp;  - Random Forest achieved the highest accuracy
-
-&nbsp;  - Model saved using Joblib
-
-
-
-\## Results
-
-\- Outputs are saved in the `outputs/` folder:
-
-&nbsp; - Plots (EDA, correlation, confusion matrix, feature importance)
-
-&nbsp; - Model performance comparison (`05\_model\_performance.csv`)
-
-&nbsp; - Classification report (`06\_classification\_report.txt`)
-
-&nbsp; - Best trained model (`best\_model\_RandomForest.joblib`)
-
-
-
-\## How to Run
-
-1\. Install dependencies:
-
-&nbsp;  ```bash
-
-&nbsp;  pip install numpy pandas matplotlib seaborn scikit-learn joblib
-
-
-
+# 🫀 Cardiovascular Disease Predictive Analytics & AI Deployment
+### Cognevance Technologies — AI & Machine Learning (Level 3 Project)
+
+---
+
+## 📌 Project Overview
+Cardiovascular diseases (CVDs) are the leading cause of global mortality. This project delivers an end-to-end, production-grade Machine Learning and Deep Learning system designed to accurately classify and predict cardiovascular disease risk from patient biometric indicators.
+
+The pipeline integrates automated data preprocessing, clinical feature engineering, multi-model benchmarking (Classical vs. Deep Learning), low-latency REST API deployment via **FastAPI**, and an interactive diagnostic web portal powered by **Streamlit**.
+
+---
+
+## 🏗️ Repository Architecture
+
+```text
+cognevance_CardioDiseasePrediction/
+│
+├── api/
+│   └── app.py                  # High-performance FastAPI serving endpoints (/predict, /health)
+│
+├── dashboard/
+│   └── app.py                  # Interactive Streamlit clinical interface & analytics portal
+│
+├── src/
+│   └── train_dl.py             # Deep Neural Network (MLP) architecture using TensorFlow/Keras
+│
+├── outputs/
+│   └── visualizations/         # Confusion matrices, ROC-AUC curves, and EDA distribution plots
+│
+├── report/
+│   └── project_report.md       # Comprehensive technical project documentation & audit
+│
+├── cardio_train (1).csv        # Primary patient cohort dataset (70,000 clinical records)
+├── main.py                     # Core data preprocessing and classical ML benchmark pipeline
+├── requirements.txt            # System environment dependencies
+└── README.md                   # Project documentation and reproduction guide
